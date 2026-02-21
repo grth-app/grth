@@ -17,6 +17,16 @@ yarn tauri build   # Package into native desktop app
 
 No test or lint commands are configured.
 
+## Yarn PnP
+
+This project uses **Yarn 4 with Plug'n'Play** — packages are not unpacked into `node_modules`. If VSCode can't resolve types after `yarn install`, run:
+
+```bash
+yarn dlx @yarnpkg/sdks vscode
+```
+
+Then select "Use Workspace Version" when VSCode prompts for the TypeScript version.
+
 ## Architecture
 
 This is a **Tauri 2 + React 19 + TypeScript** desktop app. Two separate runtimes communicate via Tauri's IPC bridge:
